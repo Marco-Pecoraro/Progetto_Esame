@@ -1,8 +1,19 @@
+:root {
+    --text-color: #000;
+    --background-color: #fff;
+    --border-color: #000;
+    --hover-text-color: #fff;
+    --hover-background-color: #111;
+    --hover-border-color: #fff;
+    --hover-underline-color: #000;
+}
+
 body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 header > nav {
@@ -11,12 +22,18 @@ header > nav {
     padding: 10px;
 }
 
-header nav div, span:hover {
-    cursor: pointer;
+header nav div {
+    margin-left: 1%;
 }
 
-header > nav div {
-    margin-left: 3%;
+header nav div, span {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+header nav div:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--hover-underline-color);
 }
 
 aside {
@@ -26,28 +43,38 @@ aside {
 .box_divider {    
     width: 100%;
     margin: 2%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     padding: 20px;
-    color: rgb(220, 252, 255);
-    border: 2px solid #111;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
 }
 
+.box_divider:hover, .box_divider:hover .box_content {
+    cursor: pointer;
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
+    border-color: var(--hover-border-color);
+}
 
 .box_content {
     width: 100%;
     margin: 2%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(220, 252, 255);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.box_content:hover {
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
 }
 
 main {
@@ -56,30 +83,31 @@ main {
 
 #mail_currentSelection {
     width: 60%;
-
     margin: 0 auto;
 }
 
 #googleApps {
     width: 3%;
     height: auto;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
-    border: 2px solid #111;
+    border: 2px solid var(--border-color);
     border-radius: 10px;
 }
 
 #googleApps > hr {
     width: 30%;
     margin: 0 auto;
-    color: #111;
+    color: var(--border-color);
 }
 
 #googleApps img {
     width: 30px;
     height: 30px;
+}
+
+#googleApps img:hover {
+    cursor: pointer;
 }
