@@ -64,3 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+async function loadEmails() {
+    const response = await fetch('http://localhost:5000/api/emails');
+    const emails = await response.json();
+}

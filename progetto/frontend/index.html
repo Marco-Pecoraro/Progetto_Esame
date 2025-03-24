@@ -1,77 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E. AI</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+    <title>INBOXit</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <header>
         <nav>
-            <img src="img/icons/envelope.svg" alt="In Arrivo">
-            <span class="material-symbols-outlined">add</span>
-            <span class="material-symbols-outlined">chevron_left</span>
             <span class="material-symbols-outlined">menu</span>
-            <div>HELP</div>
-            <div>TERMS</div>
-            <div>PRIVACY</div>
-            <div>ACCESSIBILITY</div>
+            <div class="logo">INBOXit</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Cerca...">
+            </div>
         </nav>
     </header>
+
     <main>
-        <aside>
-            <div class="box_divider" id="arriving">
-                <div class="box_content">
-                    <h1>In arrivo</h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
+        <aside class="sidebar">
+            <button id="sync-btn" class="sync-btn">
+                <span class="material-symbols-outlined">sync</span>
+                Sincronizza
+            </button>
+            
+            <div class="folder active" data-category="inbox">
+                <span class="material-symbols-outlined">inbox</span>
+                <span>In arrivo</span>
             </div>
-            <div class="box_divider" id="important">
-                <div class="box_content">
-                    <h1>Importanti</h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="box_divider" id="meetings">
-                <div class="box_content">
-                    <h1>Meetings</h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="box_divider" id="bin">
-                <div class="box_content">
-                    <h1>Cestino</h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="box_divider" id="inviate">
-                <div class="box_content">
-                    <h1>Inviate</h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
+            
+            <div class="folder" data-category="important">
+                <span class="material-symbols-outlined">label_important</span>
+                <span>Importanti</span>
             </div>
         </aside>
-        <section id="mail_currentSelection">
-            <div class="box_divider" id="box_email">
-                <div class="box_content">
-                    <h1>Email title</h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
+
+        <section class="email-list-container">
+            <div class="email-list-header">
+                <h2 id="folder-title">In arrivo</h2>
+                <div class="email-count" id="email-count">0 email</div>
+            </div>
+            
+            <div id="email-list" class="email-list">
+                <!-- lista email finirà qui -->
             </div>
         </section>
-        <article id="googleApps">
-            <img src="img/icons/google_calendar.png" alt="Google Calendar">
-            <img src="img/icons/google_meet.png" alt="Google Meet">
-            <img src="img/icons/google_task.png" alt="Google Tasks">
-            <hr>
-            <span class="material-symbols-outlined">add</span>
-        </article>
     </main>
-    <script src="scripts/index.js"></script>
-</body>
 
+    <script src="scripts/email.js"></script>
+</body>
 </html>
